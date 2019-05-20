@@ -20,7 +20,8 @@ export default class Character extends Component {
             items: [],
             isLoaded: false,
             error: null,
-            max: 493
+            max: 493,
+            pageNumber: 1
         }
     }
 
@@ -84,6 +85,9 @@ export default class Character extends Component {
             const to = firstElementId - 1;
             const queryString = this.formQueryString(from, to);
             this.takeHeroes(queryString);
+            this.setState({
+                pageNumber: this.state.pageNumber - 1
+            })
            
         }
 
@@ -96,6 +100,9 @@ export default class Character extends Component {
             const to = lastElementId + 9;
             const queryString = this.formQueryString(from, to);
             this.takeHeroes(queryString);
+            this.setState({
+                pageNumber: this.state.pageNumber + 1
+            })
            
         }
     }
@@ -133,6 +140,8 @@ export default class Character extends Component {
                             :
                             <button className="btn" onClick={this.takePrev}>&#60; PREV</button>
                         }
+
+                        <span className="pageNumber">{this.state.pageNumber}</span>
 
                         {(this.state.items[this.state.items.length - 1].id < this.state.max) ?
 

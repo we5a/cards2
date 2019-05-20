@@ -20,6 +20,23 @@
     margin-bottom: 15px;
 }
 
+.pageNumber {
+   
+    padding: 5px;
+    margin: 10px;
+    /* background-color: #0086b3; */
+    background-color: white;
+    color: grey;
+    font-weight: bold;
+    
+}
+.pageNumber::before{
+    content:" - ";
+}
+.pageNumber::after{
+    content: " - ";
+}
+
 .buttonBlock{
     text-align: center;
     margin-bottom: 20px;
