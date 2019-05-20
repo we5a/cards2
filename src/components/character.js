@@ -29,8 +29,7 @@ export default class Character extends Component {
             .then(res => res.json())
             .then(
                 (result) => {
-                    console.log(result)
-                    this.setState({
+                        this.setState({
                         isLoaded: true,
                         items: result,
                     });
@@ -85,7 +84,7 @@ export default class Character extends Component {
             const to = firstElementId - 1;
             const queryString = this.formQueryString(from, to);
             this.takeHeroes(queryString);
-            console.log('show from', from, 'to', to);
+           
         }
 
     }
@@ -97,7 +96,7 @@ export default class Character extends Component {
             const to = lastElementId + 9;
             const queryString = this.formQueryString(from, to);
             this.takeHeroes(queryString);
-            console.log('show from', from, 'to', to);
+           
         }
     }
 
